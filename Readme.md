@@ -281,8 +281,8 @@ Animation:
 - Animate enter/exit called each frame when transition is requested until it returns true;
 **SceneManager functions**
 In order to transit between scenes SceneManager has functions
-- QueTransit # current scene will be deleted from stack
-- QueTransitSus # suspend + transit, current scene kept in stack
+- QueueTransit # current scene will be deleted from stack
+- QueueTransitSus # suspend + transit, current scene kept in stack
 - QuePop # return to previous scene in scene stack, current is deleted
 If Transition is called before the last one was performed it will be ignored
 ---

@@ -7,7 +7,7 @@ public:
     // Called on Scene first creation
     // Can be used to load assets and build UI layout
     virtual void OnEnter() = 0; 
-    // Called only if the scene was suspended with QueTransitSus and returned back to with QuePop
+    // Called only if the scene was suspended with QueueTransitSus and returned back to with QuePop
     virtual void OnRestore() = 0; 
 
     // Called every frame before OnDraw

@@ -80,7 +80,7 @@ void Engine::init(){
     resManager.load();
     GetServices().theme.warmup(); //Loads all fontsizes
     SetExitKey(0);
-    GetServices().sceneManager.QueTransit(m_app->createScene());
+    GetServices().sceneManager.QueueTransit(m_app->createScene());
 }
 
 void Engine::frame(){

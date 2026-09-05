@@ -88,7 +88,7 @@ void TestScene::OnEnter(){
         row->Add(
             Button(Text("Settings", "button"),
                 [](){ 
-                    GetServices().sceneManager.QueTransitSus<SettingsScene>();
+                    GetServices().sceneManager.QueueTransitSus<SettingsScene>();
                 },
                 TextureSpec("button_default"),{200.f,100.f}, spec)
         );

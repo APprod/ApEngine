@@ -72,6 +72,7 @@ public:
     }
     UICompId AddChild(std::unique_ptr<UIComponent>&& child);
     void QueueRemoveChild(UICompId id);
+    void QueueClear();
     // Pass calls to children
     void OnDrawContent() override;
     // Pass calls to children

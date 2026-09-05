@@ -33,7 +33,7 @@ public:
     // Safe to call from any place in the programm
     // Queues transition
     template<typename T, typename... Args> 
-    void QueTransit(Args&&... args){
+    void QueueTransit(Args&&... args){
         if (m_state != TransitState::Idle || m_pending) {
             mylog::GetLogger().Warn("Transition already queued, ignoring");
             return;
@@ -44,7 +44,7 @@ public:
         m_state = TransitState::Exiting;
     }
     //Queues transition
-    void QueTransit(std::unique_ptr<IScene> scene){
+    void QueueTransit(std::unique_ptr<IScene> scene){
         if (m_state != TransitState::Idle || m_pending) {
             mylog::GetLogger().Warn("Transition already queued, ignoring");
             return;
@@ -57,7 +57,7 @@ public:
     // Queues transition current scene will be
     // Suspended and restored on next Pop
     template<typename T, typename... Args> 
-    void QueTransitSus(Args&&... args){
+    void QueueTransitSus(Args&&... args){
         if (m_state != TransitState::Idle || m_pending) {
             mylog::GetLogger().Warn("Transition already queued, ignoring");
             return;

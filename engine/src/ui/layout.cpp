@@ -33,6 +33,11 @@ bool Layout::RemoveChild(UICompId compId) {
 void Layout::QueueRemoveChild(UICompId compId) {
     m_removalQueue.push_back(compId);
 }
+void Layout::QueueClear(){
+    for (auto& child: m_children){
+        QueueRemoveChild(child->id);
+    }
+}
 
 void Layout::OnDrawContent()
 {
