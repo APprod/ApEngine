@@ -5,7 +5,7 @@ MyThreadPool::MyThreadPool(size_t threadCount){
     threadNum = std::max(static_cast<size_t>(2), threadCount);
     workers.reserve(threadNum);
     for(size_t i{0}; i < threadNum; i++){
-        workers.emplace_back(&worker, this);
+        workers.emplace_back(&MyThreadPool::worker, this);
     }
 }
 
@@ -38,3 +38,8 @@ void MyThreadPool::worker(){
         }
     }
 };
+
+void MyThreadPool::waitAll(){
+    std::unique_lock lock(mut);
+    m_allDone.wait(lock, [this](){return !m_taskCount;});
+}

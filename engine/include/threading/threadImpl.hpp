@@ -52,13 +52,9 @@ public:
             m_taskCount++;
         }
         m_cv.notify_one();
-    };
-    void stop();
-    void waitAll(){
-        std::unique_lock lock(mut);
-        m_allDone.wait(lock, [this](){return !m_taskCount;});
     }
-    
+    void stop();
+    void waitAll();
     
 private:
     void worker();

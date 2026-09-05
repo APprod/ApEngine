@@ -16,6 +16,11 @@ struct FontEntry{
     std::string filepath;
 };
 
+// Proposed: 
+// 
+// 
+// 
+
 class ResourceManager
 {
 public:
